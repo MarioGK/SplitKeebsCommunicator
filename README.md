@@ -8,4 +8,6 @@ I dont plan to support more platforms besides Windows at the moment as C# does n
 
 # BuildGuide
 WARNING: This build guide will be handwired and this kind of builds takes lots effort and time, use a PCB if you dont want to put the effort or dont want to waste time.
+
+
 The build guide will be a simple guide with a few tip and tricks, what materials i used and how i built mine so you can use it as a reference on your build.
