@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplitKeebsCommunicator", "SplitKeebsCommunicator\SplitKeebsCommunicator.csproj", "{C9A4B16D-CEDB-4611-BD5F-7164117FAEBD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplitKeebsCommunicator.UI", "SplitKeebsCommunicator.UI\SplitKeebsCommunicator.UI.csproj", "{C9A4B16D-CEDB-4611-BD5F-7164117FAEBD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplitKeebsCommunicator.HID", "SplitKeebsCommunicator.HID\SplitKeebsCommunicator.HID.csproj", "{8BEC3DF0-C17C-4176-A946-38B234433D9E}"
 EndProject

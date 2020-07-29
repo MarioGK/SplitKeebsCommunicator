@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SplitKeebsCommunicator
+namespace SplitKeebsCommunicator.UI
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
