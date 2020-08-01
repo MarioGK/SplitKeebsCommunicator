@@ -1,10 +1,27 @@
 # SplitKeebsCommunicator
-This is a work in progress Software and Build Guide with a split board without a cable connecting the two halves together instead connecting them directly to the computer and using a software to handle the communication instead of the cable.
+This is a work in progress Software and Build Guide with a split board without a cable connecting the two halves together instead we will be connecting them directly to the computer with different USB cables and using a software to handle the communication between them instead of the cable.
+
 
 # Software
-The software is really WIP atm, i am still learning how to communicate with HID devices but i am working on it while i am waiting the parts of the keyboard to arrive.
+The software will use NodeGUI as the interface framework it uses QT instead of Chromium as the rendering engine, i hate electron and the idea of having multiple chromium instances on your PC, you must have at least 5 chromium instances in your PC right now one for Discord one for Chrome one for Visual Code and anything that uses electron.
+By using NodeGUI the compiled version will be really small, fast and efficient of course in return we are giving up chromium's stability and flexibility, but i dont mind those tradeoffs when the memory usage when iddle will be ~50mb or less instead of ~500mb.
+The software will serve as a customization tool and a bridge between the keyboards.
 
-I dont plan to support more platforms besides Windows at the moment as C# does not have a good UI framework for multi platform, and this will heavily use Win32 features to work.
+
+# Firmware
+Why not use QMK?
+Well there a bunch of reasons to use or not to use QMK, i will try to summerize them and explain why i decided to make my own firmware instead of using the well known QMK.
+
+### Reasons to use:
+1. A bunch of features.
+2. A bunch of keyboards already supported either officially or by the community.
+3. They are using the awesome ChibiOS RTOS
+
+Reasons not to use:
+1. Having a bunch of features means that you have a bunch of bloat as well.
+2. Hard to learn all of its concepts and do complex stuff with.
+3. Doing it yourself you learn how everything works along the way.
+
 
 # BuildGuide
 WARNING: This build guide will be handwired and this kind of builds takes lots effort and time, use a PCB if you dont want to put the effort or dont want to waste time.
