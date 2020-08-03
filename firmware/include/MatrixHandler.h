@@ -1,6 +1,7 @@
 #include <MacroHandler.h>
 #include <Layout.h>
 #include <Keyboard.h>
+#include <Debouncer.h>
 
 void SetupMatrix()
 {
@@ -11,7 +12,7 @@ void SetupMatrix()
 
 void RunMatrix()
 {
-    char keyPressed;
+    KeyCodes keyPressed = KeyCodes::Null;
 
     for (auto rowIndex = 0; rowIndex < RowCount; rowIndex++)
     {
@@ -21,7 +22,7 @@ void RunMatrix()
         }
     }
 
-    if(keyPressed == NULL)
+    if(keyPressed == KeyCodes::Null)
     {
         return;
     }

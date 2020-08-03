@@ -14,7 +14,7 @@ void SetupRawHID()
   RawHID.begin(rawhidData, sizeof(rawhidData));
 }
 
-void LoopRawHID() {
+void RunRawHID() {
   // Send data to the host
   if (Serial.read() == 'a') {
 
