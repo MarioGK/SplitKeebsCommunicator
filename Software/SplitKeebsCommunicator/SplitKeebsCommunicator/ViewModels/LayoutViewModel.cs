@@ -13,7 +13,7 @@ namespace SplitKeebsCommunicator.ViewModels
         public LayoutViewModel(MainViewModel mainViewModel) : base(mainViewModel)
         {
             CurrentLayout = JsonSerializer.Deserialize<Layout>(File.ReadAllText("layout.json"));
-            CurrentLayout.CalculateKeysPosition();
+            CurrentLayout.CalculateRowsPosition();
             Icon    = EFontAwesomeIcon.Solid_Language;
             Label   = "Layout";
             ToolTip = "The App settings";

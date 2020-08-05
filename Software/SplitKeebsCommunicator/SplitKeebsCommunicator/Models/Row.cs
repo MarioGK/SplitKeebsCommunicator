@@ -1,5 +1,4 @@
 ﻿using System.Collections.ObjectModel;
-using System.Windows;
 using Prism.Mvvm;
 
 namespace SplitKeebsCommunicator.Models
@@ -23,13 +22,13 @@ namespace SplitKeebsCommunicator.Models
 
         public void CalculateKeysPosition()
         {
-            var width  = 0d;
-            var border = 0d;
+            var width = 0d;
 
             foreach (var key in _keys)
             {
+                
                 key.X =  width;
-                width += key.Width + key.ExtraWidth + key.Border;
+                width += key.Width + key.ExtraWidth;
                 key.Y =  Height;
             }
         }

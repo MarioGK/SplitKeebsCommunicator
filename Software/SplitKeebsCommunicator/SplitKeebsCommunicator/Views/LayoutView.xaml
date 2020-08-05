@@ -35,16 +35,14 @@
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <Button
-                                    BorderThickness="5"
-                                    Style="{DynamicResource SquareButtonStyle}"
+                                    BorderThickness="2"
                                     Width="{Binding Width}"
                                     Height="{Binding Height}">
                                     <TextBlock
                                         FontSize="{Binding FontSize}"
                                         Text="{Binding Name}"
                                         FontWeight="SemiBold"
-                                        TextWrapping="Wrap">
-                                    </TextBlock>
+                                        TextWrapping="Wrap" />
                                 </Button>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>

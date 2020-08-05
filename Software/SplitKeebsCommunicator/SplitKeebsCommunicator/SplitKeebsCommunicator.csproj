@@ -18,8 +18,4 @@
       <PackageReference Include="Prism.DryIoc" Version="8.0.0.1740-pre" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Enumerations" />
-    </ItemGroup>
-
 </Project>

@@ -13,12 +13,12 @@ namespace SplitKeebsCommunicator.Models
             set => SetProperty(ref _rows, value);
         }
 
-        public void CalculateKeysPosition()
+        public void CalculateRowsPosition()
         {
             for (var i = 0; i < _rows.Count; i++)
             {
                 var row = _rows[i];
-                row.Height   =  i * 70;
+                row.Height = i * 70;
 
                 row.CalculateKeysPosition();
             }

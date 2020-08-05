@@ -55,7 +55,7 @@ namespace LayoutParser
                         {
                             //Ignore
                         }
-                        
+
                         //Check if key has X
                         try
                         {
@@ -78,7 +78,8 @@ namespace LayoutParser
                 layout.Rows.Add(rowObj);
             }
 
-            File.WriteAllText("layout.json", JsonSerializer.Serialize(layout, new JsonSerializerOptions {WriteIndented = true, IgnoreNullValues = true}));
+            File.WriteAllText("layout.json",
+                              JsonSerializer.Serialize(layout, new JsonSerializerOptions {WriteIndented = true, IgnoreNullValues = true}));
         }
     }
 }

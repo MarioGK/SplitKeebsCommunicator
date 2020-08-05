@@ -1,16 +1,19 @@
 ﻿using System.Text.Json.Serialization;
 using Prism.Mvvm;
+using SplitKeebsCommunicator.Enumerations;
 
 namespace SplitKeebsCommunicator.Models
 {
     public class Key : BindableBase
     {
+        public readonly double Border    = 0;
         public readonly double ConstSize = 70;
-        public readonly double Border = 0;
-        private         string _keyCode;
-        private         double _cherrySizeWidth;
-        private         double _cherrySizeHeight;
-        private         string _name;
+
+        private double   _cherryExtraWidth;
+        private double   _cherrySizeHeight;
+        private double   _cherrySizeWidth;
+        private KeyCodes _keyCode;
+        private string   _name;
 
         private double _x;
 
@@ -28,17 +31,17 @@ namespace SplitKeebsCommunicator.Models
             get => _name;
             set
             {
-                SetProperty(ref _name,     value);
+                SetProperty(ref _name, value);
                 RaisePropertyChanged(nameof(FontSize));
             }
         }
 
-        public string KeyCode
+        public KeyCodes KeyCode
         {
             get => _keyCode;
             set => SetProperty(ref _keyCode, value);
         }
-        
+
         public double FontSize
         {
             get
@@ -75,8 +78,6 @@ namespace SplitKeebsCommunicator.Models
             }
         }
 
-        private double _cherryExtraWidth;
-
         public double CherryExtraWidth
         {
             get => _cherryExtraWidth;
@@ -88,11 +89,11 @@ namespace SplitKeebsCommunicator.Models
         }
 
         /// <summary>
-        /// Spacer between keys
+        ///     Spacer between keys
         /// </summary>
         public double ExtraWidth => _cherryExtraWidth * ConstSize;
-        
-        public double Width =>_cherrySizeWidth * ConstSize;
+
+        public double Width => _cherrySizeWidth * ConstSize;
 
         public double Height
         {
