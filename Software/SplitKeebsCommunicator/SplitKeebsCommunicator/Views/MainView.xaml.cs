@@ -3,16 +3,16 @@ using System.Windows.Media;
 using FontAwesome5;
 using Notifications.Wpf.Core;
 
-namespace SplitKeebsCommunicator
+namespace SplitKeebsCommunicator.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow
+    public partial class MainView
     {
         private readonly NotificationManager _notificationManager;
 
-        public MainWindow(NotificationManager notificationManager)
+        public MainView(NotificationManager notificationManager)
         {
             _notificationManager = notificationManager;
             Icon = ImageAwesome.CreateImageSource(EFontAwesomeIcon.Regular_Keyboard, Brushes.White);
