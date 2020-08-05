@@ -7,8 +7,8 @@ namespace SplitKeebsCommunicator.ViewModels
     {
         public MacrosViewModel(MainViewModel mainViewModel) : base(mainViewModel)
         {
-            Icon = EFontAwesomeIcon.Solid_Cog;
-            Label = "Settings";
+            Icon    = EFontAwesomeIcon.Solid_Cog;
+            Label   = "Settings";
             ToolTip = "The App settings";
         }
     }

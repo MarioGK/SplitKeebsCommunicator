@@ -5,12 +5,13 @@ namespace SplitKeebsCommunicator.ViewModels
 {
     public class HomeViewModel : BaseMenuItem
     {
-        public string Test { get; set; }
         public HomeViewModel(MainViewModel mainViewModel) : base(mainViewModel)
         {
-            Icon = EFontAwesomeIcon.Solid_Home;
-            Label = "Home";
+            Icon    = EFontAwesomeIcon.Solid_Home;
+            Label   = "Home";
             ToolTip = "The Home";
         }
+
+        public string Test { get; set; }
     }
 }

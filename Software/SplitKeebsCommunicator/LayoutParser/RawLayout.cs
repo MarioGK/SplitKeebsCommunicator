@@ -14,7 +14,7 @@ using Newtonsoft.Json.Converters;
 
 namespace LayoutParser
 {
-    public partial class RawLayoutClass
+    public class RawLayoutClass
     {
         [JsonProperty("x", NullValueHandling = NullValueHandling.Ignore)]
         public double? X { get; set; }
@@ -32,23 +32,36 @@ namespace LayoutParser
         public long? A { get; set; }
     }
 
-    public partial struct RawLayoutElement
+    public struct RawLayoutElement
     {
         public RawLayoutClass RawLayoutClass;
-        public string String;
+        public string         String;
 
-        public static implicit operator RawLayoutElement(RawLayoutClass RawLayoutClass) => new RawLayoutElement { RawLayoutClass = RawLayoutClass };
-        public static implicit operator RawLayoutElement(string String) => new RawLayoutElement { String = String };
+        public static implicit operator RawLayoutElement(RawLayoutClass RawLayoutClass)
+        {
+            return new RawLayoutElement {RawLayoutClass = RawLayoutClass};
+        }
+
+        public static implicit operator RawLayoutElement(string String)
+        {
+            return new RawLayoutElement {String = String};
+        }
     }
 
     public class RawLayout
     {
-        public static List<List<RawLayoutElement>> FromJson(string json) => JsonConvert.DeserializeObject<List<List<RawLayoutElement>>>(json, Converter.Settings);
+        public static List<List<RawLayoutElement>> FromJson(string json)
+        {
+            return JsonConvert.DeserializeObject<List<List<RawLayoutElement>>>(json, Converter.Settings);
+        }
     }
 
     public static class Serialize
     {
-        public static string ToJson(this List<List<RawLayoutElement>> self) => JsonConvert.SerializeObject(self, Converter.Settings);
+        public static string ToJson(this List<List<RawLayoutElement>> self)
+        {
+            return JsonConvert.SerializeObject(self, Converter.Settings);
+        }
     }
 
     internal static class Converter
@@ -56,18 +69,23 @@ namespace LayoutParser
         public static readonly JsonSerializerSettings Settings = new JsonSerializerSettings
         {
             MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-            DateParseHandling = DateParseHandling.None,
+            DateParseHandling        = DateParseHandling.None,
             Converters =
             {
                 RawLayoutElementConverter.Singleton,
-                new IsoDateTimeConverter { DateTimeStyles = DateTimeStyles.AssumeUniversal }
-            },
+                new IsoDateTimeConverter {DateTimeStyles = DateTimeStyles.AssumeUniversal}
+            }
         };
     }
 
     internal class RawLayoutElementConverter : JsonConverter
     {
-        public override bool CanConvert(Type t) => t == typeof(RawLayoutElement) || t == typeof(RawLayoutElement?);
+        public static readonly RawLayoutElementConverter Singleton = new RawLayoutElementConverter();
+
+        public override bool CanConvert(Type t)
+        {
+            return t == typeof(RawLayoutElement) || t == typeof(RawLayoutElement?);
+        }
 
         public override object ReadJson(JsonReader reader, Type t, object existingValue, JsonSerializer serializer)
         {
@@ -76,30 +94,31 @@ namespace LayoutParser
                 case JsonToken.String:
                 case JsonToken.Date:
                     var stringValue = serializer.Deserialize<string>(reader);
-                    return new RawLayoutElement { String = stringValue };
+                    return new RawLayoutElement {String = stringValue};
                 case JsonToken.StartObject:
                     var objectValue = serializer.Deserialize<RawLayoutClass>(reader);
-                    return new RawLayoutElement { RawLayoutClass = objectValue };
+                    return new RawLayoutElement {RawLayoutClass = objectValue};
             }
+
             throw new Exception("Cannot unmarshal type RawLayoutElement");
         }
 
         public override void WriteJson(JsonWriter writer, object untypedValue, JsonSerializer serializer)
         {
-            var value = (RawLayoutElement)untypedValue;
+            var value = (RawLayoutElement) untypedValue;
             if (value.String != null)
             {
                 serializer.Serialize(writer, value.String);
                 return;
             }
+
             if (value.RawLayoutClass != null)
             {
                 serializer.Serialize(writer, value.RawLayoutClass);
                 return;
             }
+
             throw new Exception("Cannot marshal type RawLayoutElement");
         }
-
-        public static readonly RawLayoutElementConverter Singleton = new RawLayoutElementConverter();
     }
 }

@@ -1,8 +1,6 @@
 ﻿using System.Collections.ObjectModel;
-using DryIoc;
 using Prism.Mvvm;
 using SplitKeebsCommunicator.Bases;
-using BindableBase = Prism.Mvvm.BindableBase;
 
 namespace SplitKeebsCommunicator.ViewModels
 {
@@ -10,7 +8,12 @@ namespace SplitKeebsCommunicator.ViewModels
     {
         private ObservableCollection<BaseMenuItem> _menuItems;
         private ObservableCollection<BaseMenuItem> _menuOptionItems;
-        
+
+        public MainViewModel()
+        {
+            CreateMenuItems();
+        }
+
         public ObservableCollection<BaseMenuItem> MenuItems
         {
             get => _menuItems;
@@ -23,11 +26,6 @@ namespace SplitKeebsCommunicator.ViewModels
             set => SetProperty(ref _menuOptionItems, value);
         }
 
-        public MainViewModel()
-        {
-            this.CreateMenuItems();
-        }
-        
         public void CreateMenuItems()
         {
             MenuItems = new ObservableCollection<BaseMenuItem>
@@ -35,8 +33,7 @@ namespace SplitKeebsCommunicator.ViewModels
                 new LayoutViewModel(this),
                 new HomeViewModel(this),
                 new DeviceViewModel(this),
-                new MacrosViewModel(this),
-                
+                new MacrosViewModel(this)
             };
 
             MenuOptionItems = new ObservableCollection<BaseMenuItem>

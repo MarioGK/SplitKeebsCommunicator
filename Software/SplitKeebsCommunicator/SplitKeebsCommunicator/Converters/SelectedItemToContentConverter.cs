@@ -14,6 +14,7 @@ namespace SplitKeebsCommunicator.Converters
             {
                 return values[0] ?? values[1];
             }
+
             return null;
         }
 

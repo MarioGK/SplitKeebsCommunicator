@@ -7,8 +7,8 @@ namespace SplitKeebsCommunicator.ViewModels
     {
         public DeviceViewModel(MainViewModel mainViewModel) : base(mainViewModel)
         {
-            Icon = EFontAwesomeIcon.Solid_Cog;
-            Label = "Settings";
+            Icon    = EFontAwesomeIcon.Solid_Key;
+            Label   = "Settings";
             ToolTip = "The App settings";
         }
     }

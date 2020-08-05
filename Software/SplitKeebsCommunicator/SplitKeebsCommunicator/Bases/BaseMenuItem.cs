@@ -6,14 +6,14 @@ using SplitKeebsCommunicator.ViewModels;
 namespace SplitKeebsCommunicator.Bases
 {
     /// <summary>
-    /// Implement the IHamburgerMenuItemBase to allow set the Visibility of the item itself.
+    ///     Implement the IHamburgerMenuItemBase to allow set the Visibility of the item itself.
     /// </summary>
     public abstract class BaseMenuItem : BindableBase, IHamburgerMenuItemBase
     {
         private EFontAwesomeIcon _icon;
-        private object _label;
-        private object _toolTip;
-        private bool _isVisible = true;
+        private bool             _isVisible = true;
+        private object           _label;
+        private object           _toolTip;
 
         public BaseMenuItem(MainViewModel mainViewModel)
         {

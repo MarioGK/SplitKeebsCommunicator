@@ -6,7 +6,7 @@ using Notifications.Wpf.Core;
 namespace SplitKeebsCommunicator.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    ///     Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainView
     {
@@ -15,7 +15,7 @@ namespace SplitKeebsCommunicator.Views
         public MainView(NotificationManager notificationManager)
         {
             _notificationManager = notificationManager;
-            Icon = ImageAwesome.CreateImageSource(EFontAwesomeIcon.Regular_Keyboard, Brushes.White);
+            Icon                 = ImageAwesome.CreateImageSource(EFontAwesomeIcon.Regular_Keyboard, Brushes.White);
             InitializeComponent();
         }
 
@@ -23,9 +23,9 @@ namespace SplitKeebsCommunicator.Views
         {
             await _notificationManager.ShowAsync(new NotificationContent
             {
-                Title = "Sample notification",
+                Title   = "Sample notification",
                 Message = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                Type = NotificationType.Information
+                Type    = NotificationType.Information
             });
         }
     }

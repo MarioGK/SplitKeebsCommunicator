@@ -16,7 +16,7 @@ namespace SplitKeebsCommunicator.Converters
                 bValue = b;
             }
 
-            return (bValue) ? Visibility.Hidden : Visibility.Visible;
+            return bValue ? Visibility.Hidden : Visibility.Visible;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
