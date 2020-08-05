@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplitKeebsCommunicator", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplitKeebsCommunicator.HID", "SplitKeebsCommunicator.HID\SplitKeebsCommunicator.HID.csproj", "{D7D5350C-F847-4350-9BF5-68499B36C6BF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{CFD2AF3E-DAC4-441B-9E00-5879DE563BA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayoutParser", "LayoutParser\LayoutParser.csproj", "{6E68C3D7-B144-4A92-B36B-A75EBAA118FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,12 @@ Global
 		{D7D5350C-F847-4350-9BF5-68499B36C6BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7D5350C-F847-4350-9BF5-68499B36C6BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7D5350C-F847-4350-9BF5-68499B36C6BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E68C3D7-B144-4A92-B36B-A75EBAA118FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E68C3D7-B144-4A92-B36B-A75EBAA118FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E68C3D7-B144-4A92-B36B-A75EBAA118FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E68C3D7-B144-4A92-B36B-A75EBAA118FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6E68C3D7-B144-4A92-B36B-A75EBAA118FC} = {CFD2AF3E-DAC4-441B-9E00-5879DE563BA9}
 	EndGlobalSection
 EndGlobal

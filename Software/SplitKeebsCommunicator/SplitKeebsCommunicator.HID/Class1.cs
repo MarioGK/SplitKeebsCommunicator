@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SplitKeebsCommunicator.HID
+﻿namespace SplitKeebsCommunicator.HID
 {
     public class Class1
     {

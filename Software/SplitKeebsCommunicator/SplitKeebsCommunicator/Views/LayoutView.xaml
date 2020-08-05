@@ -3,10 +3,54 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:SplitKeebsCommunicator.Views"
+             xmlns:viewModels="clr-namespace:SplitKeebsCommunicator.ViewModels"
+             xmlns:mvvm="http://prismlibrary.com/"
              mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300">
+             mvvm:ViewModelLocator.AutoWireViewModel="True"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             d:DataContext="{d:DesignInstance Type=viewModels:LayoutViewModel}">
+    <UserControl.Resources>
+    </UserControl.Resources>
     <Grid>
-        <TextBlock> Layout</TextBlock>
+        <!--  Rows ItemControl -->
+        <ItemsControl
+            ItemsSource="{Binding CurrentLayout.Rows}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <!--  Keys ItemControl -->
+                    <ItemsControl
+                        ItemsSource="{Binding Keys}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <Canvas />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemContainerStyle>
+                            <Style TargetType="ContentPresenter">
+                                <Setter Property="Canvas.Left" Value="{Binding X}" />
+                                <Setter Property="Canvas.Top" Value="{Binding Y}" />
+                            </Style>
+                        </ItemsControl.ItemContainerStyle>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Button
+                                    BorderThickness="5"
+                                    Style="{DynamicResource SquareButtonStyle}"
+                                    Width="{Binding Width}"
+                                    Height="{Binding Height}">
+                                    <TextBlock
+                                        FontSize="{Binding FontSize}"
+                                        Text="{Binding Name}"
+                                        FontWeight="SemiBold"
+                                        TextWrapping="Wrap">
+                                    </TextBlock>
+                                </Button>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
     </Grid>
 </UserControl>
