@@ -3,10 +3,6 @@ This is a work in progress Software and Build Guide with a split board without a
 
 
 # Software
-The software will use NodeGUI as the interface framework it uses QT instead of Chromium as the rendering engine, i hate electron and the idea of having multiple chromium instances on your PC, you must have at least 5 chromium instances in your PC right now one for Discord one for Chrome one for Visual Code and anything that uses electron.
-
-By using NodeGUI the compiled version will be really small, fast and efficient of course in return we are giving up chromium's stability and flexibility, but i dont mind those tradeoffs when the memory usage when iddle will be ~50mb or less instead of ~500mb.
-The software will serve as a customization tool and a bridge between the keyboards.
 
 
 # Firmware
